@@ -30,7 +30,7 @@ if (userCommand === "concert-this") {
         console.log(
           "Concert Location Date and Time for" +
             " " +
-            process.argv.slice(3).join(" ") +
+            process.argv.slice(3).join(" ")+
             ":"
         );
         console.log(response.data[i].venue.name);
@@ -48,7 +48,7 @@ if (userCommand === "concert-this") {
 
 if (userCommand === "spotify-this-song") {
     var songTitle=process.argv.slice(3).join(" ")
-    spotify.search({ type: 'track', query:songTitle  }, function(err, data) {
+    spotify.search({ type: 'track', query:songTitle  }, function(data) {
         if (err) {
           return console.log('Error occurred: ' + err);
         }
@@ -57,3 +57,26 @@ if (userCommand === "spotify-this-song") {
       });
 }
 
+if (userCommand === "movie-this") {
+    var searchTerm = process.argv.slice(3).join("+");
+  axios
+    .get(
+        "http://www.omdbapi.com/?t=" + searchTerm + "&y=&plot=short&apikey=c72d542d"
+    )
+    .then(function(response) {
+        
+            console.log("Movie: "+response.data.Title);
+            console.log("Year Released: "+response.data.Year);
+            console.log("IMBD Rating: "+ response.data.imdbRating);
+            console.log("Rotten Tomatoes Rating: "+response.data.Ratings[1])
+        
+        
+
+        
+           
+        
+      
+        console.log("------------------");
+      });
+
+}
