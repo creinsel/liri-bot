@@ -68,15 +68,13 @@ if (userCommand === "movie-this") {
             console.log("Movie: "+response.data.Title);
             console.log("Year Released: "+response.data.Year);
             console.log("IMBD Rating: "+ response.data.imdbRating);
-            console.log("Rotten Tomatoes Rating: "+response.data.Ratings[1])
+            console.log("Rotten Tomatoes Rating: "+response.data.Ratings[1].Value);
+            console.log("Made In: "+ response.data.Country);
+            console.log("Language of Movie: "+ response.data.Language);
+            console.log("Plot: "+ response.data.Plot);
+            console.log("Actors: "+ response.data.Actors);
         
-        
-
-        
-           
-        
-      
-        console.log("------------------");
+            console.log("------------------");
       });
 
 }
