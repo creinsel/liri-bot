@@ -48,13 +48,13 @@ if (userCommand === "concert-this") {
 
 if (userCommand === "spotify-this-song") {
     var songTitle=process.argv.slice(3).join(" ")
-    spotify.search({ type: 'track', query:songTitle  }, function(data) {
-        if (err) {
-          return console.log('Error occurred: ' + err);
-        }
-        console.log(songTitle)
-      console.log(data); 
-      });
+    spotify.search({ type: 'track', query: songTitle, limit: 1 }, function(err, data) {
+      if (err) {
+        return console.log('Error occurred: ' + err);
+      }
+     
+    console.log(data); 
+    });
 }
 
 if (userCommand === "movie-this") {
