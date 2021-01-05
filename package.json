@@ -4,7 +4,7 @@
   "description": "Clearly state the problem the app is trying to solve (i.e. what is it doing and why)",
   "main": "liri.js",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "dotenv": "^8.2.0",
     "moment": "^2.24.0",
     "node-spotify-api": "^1.1.1"
